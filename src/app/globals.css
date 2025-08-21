@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark));
 
 :root {
   --base-50: oklch(0.9868 0.0029 259.84);

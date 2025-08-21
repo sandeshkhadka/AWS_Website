@@ -1,5 +1,11 @@
+import { Features } from "@/components/Feature";
+
 function Page() {
-  return <div className="bg-primary">AWS Home Page</div>;
+  return (
+    <div className="">
+      <Features />
+    </div>
+  );
 }
 
 export default Page;

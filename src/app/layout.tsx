@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Open_Sans, Public_Sans } from "next/font/google";
+import BaseLayout from "@/layout/BaseLayout";
+import { ThemeProvider } from "@/providers/theme-providers";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,8 +27,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${open_sans.variable} ${public_sans.variable}`}>
-      <body>{children}</body>
+    <html
+      lang="en"
+      className={`${open_sans.variable} ${public_sans.variable}`}
+      suppressHydrationWarning
+    >
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <BaseLayout>{children}</BaseLayout>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
