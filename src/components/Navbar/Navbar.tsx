@@ -24,11 +24,10 @@ export const Navbar = () => {
       >
         <div
           className={cn(
-            "mx-auto mt-2 max-w-7xl px-6 transition-all duration-300 lg:px-12 backdrop-blue-lg"
-            // "bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5"
+            "mx-auto max-w-7xl px-6 transition-all duration-300 lg:px-12 backdrop-blur-lg rounded-2xl"
           )}
         >
-          <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
+          <div className="relative flex flex-wrap items-center justify-between gap-6 lg:gap-0">
             <div className="flex w-full justify-between lg:w-auto">
               <Link
                 href="/"
@@ -37,8 +36,8 @@ export const Navbar = () => {
               >
                 <Image
                   src="/logo.png"
-                  width={100}
-                  height={100}
+                  width={70}
+                  height={40}
                   alt="logo"
                   decoding="async"
                   loading="lazy"
@@ -61,7 +60,7 @@ export const Navbar = () => {
                   <li key={index}>
                     <Link
                       href={item.href}
-                      className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                      className="text-muted-foreground hover:text-accent-foreground font-medium block duration-150"
                     >
                       <span>{item.name}</span>
                     </Link>
