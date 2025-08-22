@@ -89,8 +89,8 @@ export function TestimonialSection() {
       <div className="py-16 md:py-32">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center">
-            <h2 className="text-3xl font-semibold">Loved by the Community</h2>
-            <p className="mt-6">
+            <h2 className="text-3xl font-bold">Loved by the Community</h2>
+            <p className="mt-6 text-muted-foreground">
               Harum quae dolore orrupti aut temporibus ariatur.
             </p>
           </div>
@@ -98,7 +98,7 @@ export function TestimonialSection() {
             {testimonialChunks.map((chunk, chunkIndex) => (
               <div key={chunkIndex} className="space-y-3">
                 {chunk.map(({ name, role, quote, image }, index) => (
-                  <Card key={index} className="">
+                  <Card key={index} className="bg-neutral-310 dark:bg-none">
                     <CardContent className="grid grid-cols-[auto_1fr] gap-3 pt-6">
                       <Avatar className="size-9">
                         <AvatarImage

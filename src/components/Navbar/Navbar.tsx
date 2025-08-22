@@ -20,11 +20,11 @@ export const Navbar = () => {
     <header>
       <nav
         data-state={menuState && "active"}
-        className="fixed z-20 w-full px-2"
+        className="z-20 w-full px-2 border-b"
       >
         <div
           className={cn(
-            "mx-auto max-w-7xl px-6 transition-all duration-300 lg:px-12 backdrop-blur-lg rounded-2xl"
+            "mx-auto max-w-7xl px-6 transition-all duration-300 lg:px-12 rounded-2xl"
           )}
         >
           <div className="relative flex flex-wrap items-center justify-between gap-6 lg:gap-0">
