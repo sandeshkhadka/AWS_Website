@@ -1,9 +1,13 @@
-import { Features } from "@/components/Feature";
+import FAQs from "@/components/FAQ/FAQ";
+import { HeroSection } from "@/components/Hero/Hero";
+import { TestimonialSection } from "@/components/Testimonials";
 
 function Page() {
   return (
-    <div className="">
-      <Features />
+    <div className="w-full">
+      <HeroSection />
+      <TestimonialSection />
+      <FAQs />
     </div>
   );
 }
