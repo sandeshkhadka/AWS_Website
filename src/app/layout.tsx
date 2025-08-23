@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Open_Sans, Public_Sans } from "next/font/google";
-import BaseLayout from "@/layout/BaseLayout";
 import { ThemeProvider } from "@/providers/theme-providers";
 
 export const metadata: Metadata = {
@@ -39,7 +38,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <BaseLayout>{children}</BaseLayout>
+          {children}
         </ThemeProvider>
       </body>
     </html>
