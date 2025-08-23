@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Project Title
 
-First, run the development server:
+A brief description of what this project does and who it's for
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+#  AWS Cloud Club Nepal  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Welcome to **AWS Cloud Club Nepal** — a community-driven initiative empowering students, developers, and cloud enthusiasts to **build, explore, and collaborate in the cloud**.  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+We aim to foster a culture of learning and innovation through workshops, hackathons, projects, and open-source contributions.  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Tech Stack  
 
-To learn more about Next.js, take a look at the following resources:
+Our project is built using modern tools & frameworks:  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Frontend**: [Next.js](https://nextjs.org/) + [React](https://react.dev/)   
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) 
+- **UI Components**: [ShadCN UI](https://ui.shadcn.com/), [Radix UI](https://www.radix-ui.com/), [Lucide Icons](https://lucide.dev/) 
+- **Cloud & Infra**: [AWS](https://aws.amazon.com/)  (EC2, S3, Lambda, RDS, etc.)
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Features  
 
-## Deploy on Vercel
+- Community-driven projects  
+- Event management & registration  
+- Open-source contributions  
+- Scalable AWS-based architecture  
+- Authentication & user dashboards  
+- Modern, responsive UI  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
