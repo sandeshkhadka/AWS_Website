@@ -7,10 +7,10 @@ import Image from "next/image";
 import ThemeToggle from "../Theme/ThemeSwitch";
 
 const menuItems = [
-  { name: "Features", href: "#link" },
-  { name: "Solution", href: "#link" },
-  { name: "Pricing", href: "#link" },
-  { name: "About", href: "#link" },
+  { name: "Events", href: "#events" },
+  { name: "Teams", href: "#teams" },
+  { name: "Gallery", href: "#gallery" },
+  { name: "FAQ", href: "#faq" },
 ];
 
 export const Navbar = () => {
