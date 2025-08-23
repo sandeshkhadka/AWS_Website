@@ -20,20 +20,22 @@ export function HeroSection() {
                   <span className="bg-primary text-white rounded-[calc(var(--radius)-0.25rem)] px-2 py-1 text-xs">
                     New
                   </span>
-                  <span className="text-sm">AWS CLUB</span>
+                  <span className="text-sm">AWS Student Community Day Nepal 2025</span>
                   <span className="bg-(--color-border) block h-4 w-px"></span>
 
                   <ArrowRight className="size-4" />
                 </Link>
 
                 <h1 className="mt-8 text-balance text-4xl font-semibold md:text-5xl xl:text-6xl xl:[line-height:1.125]">
-                  Nepal’s Hub for AWS & Open Source Enthusiasts
+                  AWS Cloud Club in Nepal
                 </h1>
+
+                <h2 className="mt-8 text-balance text-3xl font-semibold md:text-3xl xl:text-4xl">
+                  Where Clouds Code, Coffee Flows, and IT Geeks Roam Free!
+                </h2>
                 <p className="mx-auto mt-8 hidden max-w-2xl text-wrap text-muted-foreground text-lg sm:block">
-                  Discover, contribute, and connect with a community passionate
-                  about AWS and open source. We organize events, workshops, and
-                  collaborations to foster innovation and growth in Nepal’s tech
-                  ecosystem.
+
+                  The AWS Cloud Club at Nepal introduces cloud computing focusing on AWS, to Nepal's education sector. It's a vibrant community of students exploring and innovating in cloud technology, aiming to empower future Nepalese leaders with essential digital skills.
                 </p>
 
                 <div className="mt-8">
