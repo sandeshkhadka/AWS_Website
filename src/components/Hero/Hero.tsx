@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Rocket } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
@@ -41,8 +41,7 @@ export function HeroSection() {
                 <div className="mt-8">
                   <Button size="lg" className="text-white" asChild>
                     <Link href="#">
-                      <Rocket className="relative size-4" />
-                      <span className="text-nowrap">Start Building</span>
+                      <span className="text-nowrap">Register Now!</span>
                     </Link>
                   </Button>
                 </div>
