@@ -11,6 +11,7 @@
     "docker:run": "docker run -p 3000:3000 aws-website"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.1",
     "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-avatar": "^1.1.10",
     "@radix-ui/react-label": "^2.1.7",
@@ -27,12 +28,15 @@
     "pnpm": "^10.15.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-hook-form": "^7.62.0",
     "react-icons": "^5.5.0",
     "recharts": "^3.1.2",
     "simple-icons": "^15.11.0",
+    "sonner": "^2.0.7",
     "tailwind-merge": "^3.3.1",
     "tailwindcss-animate": "^1.0.7",
-    "tw-animate-css": "^1.3.7"
+    "tw-animate-css": "^1.3.7",
+    "zod": "^4.0.17"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

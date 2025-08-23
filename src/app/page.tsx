@@ -1,3 +1,4 @@
+import ContactUs from "@/components/ContactUs/ContactUs";
 import CallToAction from "@/components/CTA/CTA";
 import FAQs from "@/components/FAQ/FAQ";
 import { Features } from "@/components/Features";
@@ -20,6 +21,7 @@ function Page() {
         <Features />
         <FAQs />
         <TestimonialSection />
+        <ContactUs />
         <CallToAction />
       </div>
 
