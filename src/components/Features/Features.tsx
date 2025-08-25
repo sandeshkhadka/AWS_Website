@@ -5,9 +5,9 @@ export function Features() {
   return (
     <section className="py-16 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mx-auto grid gap-2 sm:grid-cols-5">
+        <div className="mx-auto grid gap-3 sm:grid-cols-5">
           {/* Main Feature Card */}
-          <Card className="bg-transparent hover:border-primary transition-all ease-linear duration-500 group overflow-hidden shadow-zinc-950/5 sm:col-span-3 sm:rounded-none sm:rounded-tl-xl">
+          <Card className="bg-transparent hover:-translate-y-1 hover:border-primary/50 transition-all ease-linear duration-100 group overflow-hidden shadow-zinc-950/5 sm:col-span-3 sm:rounded-xl">
             <CardHeader>
               <div className="md:p-6">
                 <p className="font-medium">Cloud Projects & Workshops</p>
@@ -41,7 +41,7 @@ export function Features() {
           </Card>
 
           {/* Secondary Info Card */}
-          <Card className="group bg-transparent hover:border-primary transition-all ease-linear duration-500 overflow-hidden shadow-zinc-950/5 sm:col-span-2 sm:rounded-none sm:rounded-tr-xl">
+          <Card className="group bg-transparent hover:-translate-y-1 hover:border-primary/50 transition-all ease-linear duration-100 overflow-hidden shadow-zinc-950/5 sm:col-span-2 sm:rounded-xl">
             <p className="mx-auto my-6 max-w-md text-center text-lg font-semibold sm:text-2xl px-6 md:p-6">
               Learn cloud computing, collaborate on projects, and showcase your
               skills.
@@ -71,7 +71,7 @@ export function Features() {
           </Card>
 
           {/* Small Cards with Icons */}
-          <Card className="bg-transparent hover:border-primary transition-all ease-linear duration-500 group p-6 shadow-zinc-950/5 sm:col-span-2 sm:rounded-none sm:rounded-bl-xl md:p-12">
+          <Card className="bg-transparent hover:-translate-y-1 hover:border-primary/50 transition-all ease-linear duration-100 group p-6 shadow-zinc-950/5 sm:col-span-2 sm:rounded-xl md:p-12">
             <p className="mx-auto mb-12 max-w-md text-center text-lg font-semibold sm:text-2xl">
               Build, Explore, and Collaborate in the Cloud.
             </p>
@@ -95,7 +95,7 @@ export function Features() {
           </Card>
 
           {/* Logos of AWS services */}
-          <Card className="bg-transparent hover:border-primary transition-all ease-linear duration-500  group relative shadow-zinc-950/5 sm:col-span-3 sm:rounded-none sm:rounded-br-xl">
+          <Card className="bg-transparent hover:-translate-y-1 hover:border-primary/50 transition-all ease-linear duration-100  group relative shadow-zinc-950/5 sm:col-span-3 sm:rounded-xl">
             <CardHeader className="p-6 md:p-12">
               <p className="font-medium">Popular AWS Services</p>
               <p className="text-muted-foreground mt-2 max-w-sm text-sm">
