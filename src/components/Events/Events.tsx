@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState, useMemo } from "react";
 import { events } from "@/data/events";
 import type { EventItem } from "@/interface/IEvent";
 import { Card, CardContent } from "@/components/ui/card";
@@ -19,7 +20,21 @@ const groupEvents = (items: EventItem[]) => {
 const MAX_PAST_EVENTS_DISPLAY = 3;
 
 export function EventsSection() {
-  const { upcoming, past } = groupEvents(events);
+  // Derive tag list (stable, sorted) once
+  const tags = useMemo(() => {
+    const set = new Set<string>();
+    events.forEach(ev => ev.tags?.forEach(t => set.add(t)));
+    return Array.from(set).sort((a,b) => a.localeCompare(b));
+  }, []);
+
+  const [selectedTag, setSelectedTag] = useState<string>("all");
+
+  const filtered = useMemo(() => {
+    if (selectedTag === "all") return events;
+    return events.filter(ev => ev.tags?.includes(selectedTag));
+  }, [selectedTag]);
+
+  const { upcoming, past } = groupEvents(filtered);
 
   return (
     <section id="events" className="py-16 md:py-28">
@@ -34,6 +49,25 @@ export function EventsSection() {
           </p>
         </div>
 
+        {/* Tag Filter Bar */}
+        {tags.length > 0 && (
+          <div className="mt-10 flex flex-wrap gap-2 justify-center">
+            <FilterChip
+              label="All"
+              active={selectedTag === "all"}
+              onClick={() => setSelectedTag("all")}
+            />
+            {tags.map(tag => (
+              <FilterChip
+                key={tag}
+                label={tag}
+                active={selectedTag === tag}
+                onClick={() => setSelectedTag(tag)}
+              />
+            ))}
+          </div>
+        )}
+
         {upcoming.length > 0 && (
           <div className="mt-12">
             <h3 className="text-xl font-semibold mb-4">Upcoming</h3>
@@ -43,6 +77,10 @@ export function EventsSection() {
               ))}
             </div>
           </div>
+        )}
+
+        {upcoming.length === 0 && past.length === 0 && (
+          <p className="mt-12 text-center text-muted-foreground">No events found for this tag.</p>
         )}
 
         <div className="mt-16">
@@ -72,6 +110,30 @@ const MAX_TAGS_DISPLAY = 3;
 interface EventCardProps {
   event: EventItem;
   ctaLabel?: string;
+}
+
+interface FilterChipProps {
+  label: string;
+  active: boolean;
+  onClick: () => void;
+}
+
+function FilterChip({ label, active, onClick }: FilterChipProps) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={active}
+      className={[
+        "text-xs md:text-sm px-3 py-1.5 rounded-full border transition",
+        active
+          ? "bg-primary text-primary-foreground border-primary"
+          : "bg-background hover:bg-muted border-border text-muted-foreground"
+      ].join(" ")}
+    >
+      {label}
+    </button>
+  );
 }
 
 function EventCard({ event, ctaLabel = "Details" }: EventCardProps) {
