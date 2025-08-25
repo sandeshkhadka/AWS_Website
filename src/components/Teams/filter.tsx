@@ -14,7 +14,7 @@ export function Filter({ selected, setSelected }: {
                 <button
                     key={filter.value}
                     onClick={() => setSelected(filter.value)}
-                    className={`px-5 py-2 rounded-full font-medium border transition
+                    className={`px-5 py-2 rounded-full font-medium border transition cursor-pointer
               ${selected === filter.value
                             ? "bg-blue-600 text-white dark:bg-blue-500 dark:text-white border-blue-600 dark:border-blue-500"
                             : "bg-transparent text-gray-700 dark:text-gray-200 border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800"
