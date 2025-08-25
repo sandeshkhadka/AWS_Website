@@ -35,7 +35,7 @@ export function TestimonialSection() {
               <div key={chunkIndex} className="space-y-3">
                 {chunk.map(({ name, role, quote, image }, index) => (
                   <Card key={index} className="bg-neutral-310 dark:bg-none">
-                    <CardContent className="grid grid-cols-[auto_1fr] gap-3 pt-6">
+                    <CardContent className="grid grid-cols-[auto_1fr] gap-3">
                       <Avatar className="size-9">
                         <AvatarImage
                           alt={name}
