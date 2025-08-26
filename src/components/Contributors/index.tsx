@@ -4,6 +4,7 @@ import React from "react";
 import contributors from "./contributors";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import Image from "next/image";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -30,21 +31,28 @@ const ContributorsSection = () => {
           }}
         >
           {contributors.map((contributor, idx) => (
-            <SwiperSlide key={idx}>
-              <div className="bg-card text-card-foreground rounded-xl shadow-md overflow-hidden flex flex-col items-center">
-                <img
-                  src={contributor.image}
-                  alt={contributor.name}
-                  className="w-full h-[220px] object-cover"
-                />
-                <div className="p-5 flex flex-col items-center">
+            <SwiperSlide key={idx} className="flex justify-center">
+              <div className="bg-card text-card-foreground rounded-2xl shadow-lg overflow-hidden transition hover:shadow-xl hover:-translate-y-1 w-[280px]">
+                
+                {/* Image */}
+                <div className="relative w-full aspect-[3/4]">
+                  <Image
+                    src={contributor.image}
+                    alt={contributor.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
+                {/* Info */}
+                <div className="p-5 flex flex-col items-center text-center">
                   <h3 className="text-lg font-semibold">{contributor.name}</h3>
                   {contributor.role && (
-                    <p className="text-muted-foreground text-sm">
+                    <p className="text-muted-foreground text-sm mt-1">
                       {contributor.role}
                     </p>
                   )}
-                  <div className="flex space-x-4 mt-3">
+                  <div className="flex space-x-5 mt-3">
                     {contributor.github && (
                       <a
                         href={contributor.github}
