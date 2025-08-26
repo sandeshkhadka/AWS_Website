@@ -1,3 +1,5 @@
+
+
 import ContactUs from "@/components/ContactUs/ContactUs";
 import CallToAction from "@/components/CTA/CTA";
 import FAQs from "@/components/FAQ/FAQ";
@@ -5,6 +7,7 @@ import { Features } from "@/components/Features";
 import { HeroSection } from "@/components/Hero/Hero";
 import LogoClouds from "@/components/LogoCloud/LogoCloud";
 import { TestimonialSection } from "@/components/Testimonials";
+import ContributorsSection from "@/components/Contributors"; 
 
 function Page() {
   return (
@@ -21,6 +24,7 @@ function Page() {
         <Features />
         <FAQs />
         <TestimonialSection />
+        <ContributorsSection /> 
         <ContactUs />
         <CallToAction />
       </div>
