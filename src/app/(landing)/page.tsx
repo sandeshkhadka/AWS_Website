@@ -4,6 +4,7 @@ import FAQs from "@/components/FAQ/FAQ";
 import { Features } from "@/components/Features";
 import { HeroSection } from "@/components/Hero/Hero";
 import LogoClouds from "@/components/LogoCloud/LogoCloud";
+import PresidentReview from "@/components/Review/President";
 import { TestimonialSection } from "@/components/Testimonials";
 
 function Page() {
@@ -19,6 +20,7 @@ function Page() {
         <HeroSection />
         <LogoClouds />
         <Features />
+        <PresidentReview />
         <FAQs />
         <TestimonialSection />
         <ContactUs />
