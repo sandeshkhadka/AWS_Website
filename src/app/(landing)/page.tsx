@@ -1,4 +1,5 @@
 import ContactUs from "@/components/ContactUs/ContactUs";
+import { ClubConnectivity } from "@/components/CTA/ClubConnectivity";
 import CallToAction from "@/components/CTA/CTA";
 import FAQs from "@/components/FAQ/FAQ";
 import { Features } from "@/components/Features";
@@ -24,6 +25,7 @@ function Page() {
         <FAQs />
         <TestimonialSection />
         <ContactUs />
+        <ClubConnectivity />
         <CallToAction />
       </div>
 
