@@ -8,6 +8,13 @@ type Contributor = {
 
 const contributors: Contributor[] = [
   {
+    name: "Sandesh Khadka",
+    role: "Tech Lead",
+    image: "/contributors/sandesh.jpg",
+    github: "https://github.com/sandeshkhadka",
+    linkedin: "https://linkedin.com/in/sandeshkhadka",
+  },
+  {
     name: "Jeeni Shrestha",
     role: "Developer",
     image: '/contributors/jeeni.webp',
@@ -20,30 +27,6 @@ const contributors: Contributor[] = [
     linkedin: "https://www.linkedin.com",
     role: "Developer",
     image: '/contributors/jeeni.webp',
-  },
-  {
-    name: "Example Name",
-    role: "Designer",
-    image: "/contributors/example.jpg",
-    github: "https://github.com/example",
-  },
-  {
-    name: "Example Name",
-    role: "Designer",
-    image: "/contributors/example.jpg",
-    github: "https://github.com/example",
-  },
-  {
-    name: "Example Name",
-    role: "Designer",
-    image: "/contributors/example.jpg",
-    github: "https://github.com/example",
-  },
-  {
-    name: "Example Name",
-    role: "Designer",
-    image: "/contributors/example.jpg",
-    github: "https://github.com/example",
   },
 ];
 

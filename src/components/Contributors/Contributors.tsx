@@ -9,6 +9,8 @@ import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Link from "next/link";
+import { Github, Linkedin } from "lucide-react";
 
 export const ContributorsSection = () => {
   return (
@@ -55,24 +57,24 @@ export const ContributorsSection = () => {
                     )}
                     <div className="flex space-x-5 mt-3">
                       {contributor.github && (
-                        <a
+                        <Link
                           href={contributor.github}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-muted-foreground hover:text-primary transition"
                         >
-                          GitHub
-                        </a>
+                        <Github/>
+                        </Link>
                       )}
                       {contributor.linkedin && (
-                        <a
+                        <Link
                           href={contributor.linkedin}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-muted-foreground hover:text-primary transition"
                         >
-                          LinkedIn
-                        </a>
+                        <Linkedin/>
+                        </Link>
                       )}
                     </div>
                   </div>
