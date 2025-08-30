@@ -4,6 +4,26 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { BorderBeam } from "@/components/magicui/border-beam";
+import { motion, Transition } from "motion/react";
+
+const transitionVariants = {
+  hidden: {
+    opacity: 0,
+    filter: "blur(12px)",
+    y: 12,
+  },
+  visible: {
+    opacity: 1,
+    filter: "blur(0px)",
+    y: 0,
+  },
+  transition: {
+    type: "spring",
+    bounce: 0.3,
+    duration: 1.5,
+  },
+};
 
 export function HeroSection() {
   return (
@@ -11,7 +31,12 @@ export function HeroSection() {
       <main className="overflow-hidden">
         <section>
           <div className="relative pt-24">
-            <div className="mx-auto max-w-7xl px-6">
+            <motion.div
+              initial={transitionVariants.hidden}
+              animate={transitionVariants.visible}
+              transition={transitionVariants.transition as Transition<unknown>}
+              className="mx-auto max-w-7xl px-6"
+            >
               <div className="max-w-3xl text-center sm:mx-auto lg:mr-auto lg:mt-0 lg:w-4/5">
                 <Link
                   href="/"
@@ -20,7 +45,9 @@ export function HeroSection() {
                   <span className="bg-primary text-white rounded-[calc(var(--radius)-0.25rem)] px-2 py-1 text-xs">
                     New
                   </span>
-                  <span className="text-sm">AWS Student Community Day Nepal 2025</span>
+                  <span className="text-sm">
+                    AWS Student Community Day Nepal 2025
+                  </span>
                   <span className="bg-(--color-border) block h-4 w-px"></span>
 
                   <ArrowRight className="size-4" />
@@ -34,8 +61,11 @@ export function HeroSection() {
                   Where Clouds Code, Coffee Flows, and IT Geeks Roam Free!
                 </h2>
                 <p className="mx-auto mt-8 hidden max-w-2xl text-wrap text-muted-foreground text-lg sm:block">
-
-                  The AWS Cloud Club at Nepal introduces cloud computing focusing on AWS, to Nepal's education sector. It's a vibrant community of students exploring and innovating in cloud technology, aiming to empower future Nepalese leaders with essential digital skills.
+                  The AWS Cloud Club at Nepal introduces cloud computing
+                  focusing on AWS, to Nepal&apos;s education sector. It&apos;s a
+                  vibrant community of students exploring and innovating in
+                  cloud technology, aiming to empower future Nepalese leaders
+                  with essential digital skills.
                 </p>
 
                 <div className="mt-8">
@@ -46,8 +76,12 @@ export function HeroSection() {
                   </Button>
                 </div>
               </div>
-            </div>
-            <div className="relative mt-16">
+            </motion.div>
+
+            <motion.div
+              transition={transitionVariants.transition as Transition<unknown>}
+              className="relative mt-16"
+            >
               <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
                 <div
                   aria-hidden
@@ -55,7 +89,7 @@ export function HeroSection() {
                 />
                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border-2  p-4 shadow-lg shadow-zinc-950/15 ring-1">
                   <Image
-                    className="bg-background aspect-15/10 relative hidden rounded-2xl dark:block"
+                    className="bg-background aspect-15/10 relative hidden rounded-2xl dark:block grayscale-100"
                     src="/hero-image.png"
                     alt="app screen"
                     width="2700"
@@ -68,9 +102,17 @@ export function HeroSection() {
                     width="2700"
                     height="1440"
                   />
+
+                  <BorderBeam
+                    duration={7}
+                    delay={3}
+                    size={400}
+                    borderWidth={3}
+                    className="from-transparent via-primary to-transparent"
+                  />
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
       </main>
