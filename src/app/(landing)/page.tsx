@@ -29,7 +29,6 @@ function Page() {
         <FAQs />
         <TestimonialSection />
         <ContactUs />
-        <ClubConnectivity />
         <CallToAction />
       </div>
 
