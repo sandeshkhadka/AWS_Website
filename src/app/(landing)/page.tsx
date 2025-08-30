@@ -7,7 +7,7 @@ import { Features } from "@/components/Features";
 import { HeroSection } from "@/components/Hero/Hero";
 import LogoClouds from "@/components/LogoCloud/LogoCloud";
 import { TestimonialSection } from "@/components/Testimonials";
-import ContributorsSection from "@/components/Contributors"; 
+import { ContributorsSection } from "@/components/Contributors";
 
 function Page() {
   return (
@@ -24,7 +24,7 @@ function Page() {
         <Features />
         <FAQs />
         <TestimonialSection />
-        <ContributorsSection /> 
+        <ContributorsSection />
         <ContactUs />
         <CallToAction />
       </div>
