@@ -8,6 +8,7 @@ import FAQs from "@/components/FAQ/FAQ";
 import { Features } from "@/components/Features";
 import { HeroSection } from "@/components/Hero/Hero";
 import LogoClouds from "@/components/LogoCloud/LogoCloud";
+import Team from "@/components/Teams/Team";
 import PresidentReview from "@/components/Review/President";
 import { TestimonialSection } from "@/components/Testimonials";
 import { ContributorsSection } from "@/components/Contributors";
@@ -31,6 +32,7 @@ function Page() {
         <PresidentReview />
         <FAQs />
         <TestimonialSection />
+        <Team />
         <ContributorsSection />
         <ContactUs />
         <CallToAction />
