@@ -89,7 +89,7 @@ export function HeroSection() {
                 />
                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border-2  p-4 shadow-lg shadow-zinc-950/15 ring-1">
                   <Image
-                    className="bg-background aspect-15/10 relative hidden rounded-2xl dark:block"
+                    className="bg-background aspect-15/10 relative hidden rounded-2xl dark:block grayscale-100"
                     src="/hero-image.png"
                     alt="app screen"
                     width="2700"

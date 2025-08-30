@@ -1,11 +1,18 @@
+
+
 import ContactUs from "@/components/ContactUs/ContactUs";
+import { ClubConnectivity } from "@/components/CTA/ClubConnectivity";
 import CallToAction from "@/components/CTA/CTA";
+import Rsvp from "@/components/CTA/Rsvp";
 import FAQs from "@/components/FAQ/FAQ";
 import { Features } from "@/components/Features";
 import { HeroSection } from "@/components/Hero/Hero";
 import LogoClouds from "@/components/LogoCloud/LogoCloud";
 import Team from "@/components/Teams/Team";
+import PresidentReview from "@/components/Review/President";
 import { TestimonialSection } from "@/components/Testimonials";
+import { ContributorsSection } from "@/components/Contributors";
+import { EventsSection } from "@/components/Events";
 
 function Page() {
   return (
@@ -18,11 +25,15 @@ function Page() {
 
       <div className="w-full">
         <HeroSection />
+        <Rsvp />
         <LogoClouds />
         <Features />
+        <EventsSection />
+        <PresidentReview />
         <FAQs />
         <TestimonialSection />
         <Team />
+        <ContributorsSection />
         <ContactUs />
         <CallToAction />
       </div>
