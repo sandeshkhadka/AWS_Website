@@ -211,11 +211,7 @@ function EventCard({ event, ctaLabel = "Details" }: EventCardProps) {
                 {ctaLabel}
               </Link>
             </Button>
-          ) : (
-            <Button disabled size="sm">
-              Soon
-            </Button>
-          )}
+          ) : null }
           {/* Placeholder for future: <Button variant="ghost" size="sm">Share</Button> */}
         </div>
       </CardContent>

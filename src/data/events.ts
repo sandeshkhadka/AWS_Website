@@ -9,7 +9,7 @@ export const events: EventItem[] = [
     startTime: '09:00',
     endTime: '17:30',
     venue: 'Kathmandu (TBA)',
-    locationUrl: 'https://maps.google.com/',
+    locationUrl: 'https://www.meetup.com/aws-cloud-club-at-tribhuvan-university/events/310674609/?utm_medium=referral&utm_campaign=share-btn_savedevents_share_modal&utm_source=link&utm_version=v2',
     coverImage: '/hero-image.png',
     tags: ['conference','networking','workshops'],
     status: 'upcoming'
@@ -22,7 +22,7 @@ export const events: EventItem[] = [
     startTime: '16:00',
     endTime: '18:00',
     venue: 'Online',
-    locationUrl: 'https://meet.google.com/',
+    locationUrl: '',
     coverImage: '/aws.png',
     tags: ['workshop','beginner'],
     status: 'past'
