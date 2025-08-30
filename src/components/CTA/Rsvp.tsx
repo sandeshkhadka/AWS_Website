@@ -2,10 +2,11 @@ import Image from "next/image";
 import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { Map, CalendarDays, Clock, MapPinned } from "lucide-react";
 
 function Rsvp() {
   return (
-    <div className="relative py-16 my-16 lg:my-32 flex items-center justify-center px-6">
+    <div id="scd" className="relative py-16 my-16 lg:my-32 flex items-center justify-center px-6">
       {/* Lines */}
       <div className="absolute left-0 right-0  top-[20px] z-10 h-px w-full bg-border dark:bg-neutral-700 md:top-[48px]"></div>
       <div className="absolute bottom-0 right-[20px] top-0 z-10 h-full w-px bg-border dark:bg-neutral-700 md:right-[48px]"></div>
@@ -56,15 +57,40 @@ function Rsvp() {
             </p>
           </div>
 
-          <Link href="">
-            <Button
-              size="lg"
-              className="w-fit font-semibold text-lg"
-              variant="outline"
-            >
-              RSVP Now
-            </Button>
-          </Link>
+
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 justify-self-end">
+              <div className="flex gap-2">
+                <CalendarDays color="white" /> <span>Nov 15, 2025</span>
+              </div>
+              <div className="flex gap-2">
+                <Clock color="white" /> <span>10 A.M - 5 P.M</span>
+              </div>
+              <div className="flex gap-2">
+                <MapPinned color="white" /> <span>Advanced College of Engineering</span>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <Button size="lg" className="text-white" asChild>
+                <Link target="_blank" href={
+                  "https://www.meetup.com/aws-cloud-club-at-tribhuvan-university/events/310674609/?utm_medium=referral&utm_campaign=share-btn_savedevents_share_modal&utm_source=link&utm_version=v2"
+                }>
+                  <span className="text-nowrap">RSVP Now!</span>
+                </Link>
+              </Button>
+
+              <Button size="lg" className="text-white" asChild>
+                <Link target="_blank" href={
+                  "https://maps.app.goo.gl/QVQ5cZpybMoa6u4U6"
+                }>
+                  <Map />
+                  <span className="text-nowrap">Open in Google Maps</span>
+                </Link>
+              </Button>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
