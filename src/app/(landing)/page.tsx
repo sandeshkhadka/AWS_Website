@@ -8,6 +8,7 @@ import { HeroSection } from "@/components/Hero/Hero";
 import LogoClouds from "@/components/LogoCloud/LogoCloud";
 import PresidentReview from "@/components/Review/President";
 import { TestimonialSection } from "@/components/Testimonials";
+import { EventsSection } from "@/components/Events";
 
 function Page() {
   return (
@@ -23,11 +24,11 @@ function Page() {
         <Rsvp />
         <LogoClouds />
         <Features />
+  <EventsSection />
         <PresidentReview />
         <FAQs />
         <TestimonialSection />
         <ContactUs />
-        <ClubConnectivity />
         <CallToAction />
       </div>
 
