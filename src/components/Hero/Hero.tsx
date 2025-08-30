@@ -1,11 +1,9 @@
 "use client";
 import React from "react";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import { motion, Transition } from "motion/react";
+import { SCDButton } from "./SCDButton";
 
 const transitionVariants = {
   hidden: {
@@ -38,21 +36,7 @@ export function HeroSection() {
               className="mx-auto max-w-7xl px-6"
             >
               <div className="max-w-3xl text-center sm:mx-auto lg:mr-auto lg:mt-0 lg:w-4/5">
-                <Link
-                  href="/"
-                  className="rounded-(--radius) mx-auto flex w-fit items-center gap-2 border border-neutral-400/60 dark:border-neutral-500 p-1 pr-3"
-                >
-                  <span className="bg-primary text-white rounded-[calc(var(--radius)-0.25rem)] px-2 py-1 text-xs">
-                    New
-                  </span>
-                  <span className="text-sm">
-                    AWS Student Community Day Nepal 2025
-                  </span>
-                  <span className="bg-(--color-border) block h-4 w-px"></span>
-
-                  <ArrowRight className="size-4" />
-                </Link>
-
+              <SCDButton/>
                 <h1 className="mt-8 text-balance text-4xl font-semibold md:text-5xl xl:text-6xl xl:[line-height:1.125]">
                   AWS Cloud Club in Nepal
                 </h1>
@@ -68,13 +52,6 @@ export function HeroSection() {
                   with essential digital skills.
                 </p>
 
-                <div className="mt-8">
-                  <Button size="lg" className="text-white" asChild>
-                    <Link href="#">
-                      <span className="text-nowrap">Register Now!</span>
-                    </Link>
-                  </Button>
-                </div>
               </div>
             </motion.div>
 
