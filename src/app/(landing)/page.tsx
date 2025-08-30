@@ -1,3 +1,5 @@
+
+
 import ContactUs from "@/components/ContactUs/ContactUs";
 import { ClubConnectivity } from "@/components/CTA/ClubConnectivity";
 import CallToAction from "@/components/CTA/CTA";
@@ -8,6 +10,7 @@ import { HeroSection } from "@/components/Hero/Hero";
 import LogoClouds from "@/components/LogoCloud/LogoCloud";
 import PresidentReview from "@/components/Review/President";
 import { TestimonialSection } from "@/components/Testimonials";
+import { ContributorsSection } from "@/components/Contributors";
 import { EventsSection } from "@/components/Events";
 
 function Page() {
@@ -24,10 +27,11 @@ function Page() {
         <Rsvp />
         <LogoClouds />
         <Features />
-  <EventsSection />
+        <EventsSection />
         <PresidentReview />
         <FAQs />
         <TestimonialSection />
+        <ContributorsSection />
         <ContactUs />
         <CallToAction />
       </div>
