@@ -27,13 +27,12 @@ function Page() {
         <HeroSection />
         <Rsvp />
         <LogoClouds />
-        <Features />
         <EventsSection />
+        <Team />
+        <ContributorsSection />
         <PresidentReview />
         <FAQs />
         <TestimonialSection />
-        <Team />
-        <ContributorsSection />
         <ContactUs />
         <CallToAction />
       </div>
