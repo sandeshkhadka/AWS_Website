@@ -125,7 +125,7 @@ function FilterChip({ label, active, onClick }: FilterChipProps) {
       onClick={onClick}
       aria-pressed={active}
       className={[
-        "text-xs md:text-sm px-3 py-1.5 rounded-full border transition",
+        "text-xs md:text-sm px-3 py-1.5 rounded-full border transition, cursor-pointer",
         active
           ? "bg-primary text-primary-foreground border-primary"
           : "bg-background hover:bg-muted border-border text-muted-foreground"
@@ -211,7 +211,7 @@ function EventCard({ event, ctaLabel = "Details" }: EventCardProps) {
                 {ctaLabel}
               </Link>
             </Button>
-          ) : null }
+          ) : null}
           {/* Placeholder for future: <Button variant="ghost" size="sm">Share</Button> */}
         </div>
       </CardContent>
