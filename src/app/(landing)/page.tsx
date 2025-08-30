@@ -27,7 +27,7 @@ function Page() {
         <Rsvp />
         <LogoClouds />
         <Features />
-  <EventsSection />
+        <EventsSection />
         <PresidentReview />
         <FAQs />
         <TestimonialSection />
