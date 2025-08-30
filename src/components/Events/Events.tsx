@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useMemo } from "react";
 import { events } from "@/data/events";
-import type { EventItem } from "@/interface/IEvent";
+import type { EventItem, TagType } from "@/interface/IEvent";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -21,16 +21,16 @@ const MAX_PAST_EVENTS_DISPLAY = 3;
 
 export function EventsSection() {
   // Derive tag list (stable, sorted) once
-  const tags = useMemo(() => {
-    const set = new Set<string>();
+  const tags: TagType[] = useMemo(() => {
+    const set = new Set<TagType>();
     events.forEach(ev => ev.tags?.forEach(t => set.add(t)));
-    return Array.from(set).sort((a,b) => a.localeCompare(b));
+    return Array.from(set).sort((a, b) => a.localeCompare(b));
   }, []);
 
-  const [selectedTag, setSelectedTag] = useState<string>("all");
+  const [selectedTag, setSelectedTag] = useState<TagType>("All");
 
   const filtered = useMemo(() => {
-    if (selectedTag === "all") return events;
+    if (selectedTag === "All") return events;
     return events.filter(ev => ev.tags?.includes(selectedTag));
   }, [selectedTag]);
 
@@ -54,8 +54,8 @@ export function EventsSection() {
           <div className="mt-10 flex flex-wrap gap-2 justify-center">
             <FilterChip
               label="All"
-              active={selectedTag === "all"}
-              onClick={() => setSelectedTag("all")}
+              active={selectedTag === "All"}
+              onClick={() => setSelectedTag("All")}
             />
             {tags.map(tag => (
               <FilterChip

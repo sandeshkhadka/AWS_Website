@@ -1,3 +1,4 @@
+export type TagType = "All" | "Workshop" | "Meetup" | "Competition";
 export interface EventItem {
   id: string;
   title: string;
@@ -8,6 +9,6 @@ export interface EventItem {
   venue?: string;
   locationUrl?: string;
   coverImage?: string;
-  tags?: string[];
+  tags?:  TagType[];
   status?: "upcoming" | "past";
 }
