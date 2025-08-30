@@ -18,6 +18,7 @@ const contributors: Contributor[] = [
     name: "Sandip Gyawali",
     github: "https://github.com/SandipGyawali",
     linkedin: "https://www.linkedin.com",
+    role: "Developer",
     image: '/contributors/jeeni.webp',
   },
   {
