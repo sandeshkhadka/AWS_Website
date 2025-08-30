@@ -73,7 +73,7 @@ export default function ContactForm() {
       <div className="absolute bottom-[43.5px] right-[48px] z-20 hidden h-3 w-[2px] dark:bg-zinc-300 bg-neutral-500 md:block"></div>
       {/* lines end */}
 
-      <Card className="bg-transparent my-10 shadow-none border-none w-full mx-auto max-w-md">
+      <Card className="bg-transparent my-10 shadow-none border-none w-full mx-auto max-w-md py-4">
         <CardHeader>
           <CardTitle className="text-2xl">Contact Us</CardTitle>
           <CardDescription>
