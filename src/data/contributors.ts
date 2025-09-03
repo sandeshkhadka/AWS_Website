@@ -4,7 +4,7 @@ const contributors: TeamMember[] = [
   {
     id: 1,
     name: "Sandip Gyawali",
-    designation: "FullStack Developer",
+    designation: "FullStack Dev (Website Designer & Core Developer)",
     image: "/contributors/sandip-gyawali.jpeg",
     teamTag: "",
     social: {
@@ -14,7 +14,7 @@ const contributors: TeamMember[] = [
   },
   {
     id: 2,
-    name: "Sandesh Khadka",
+    name: "Sandesh Khadka (Team Lead)",
     designation: "Tech Lead",
     image: "/contributors/sandesh.jpg",
     teamTag: "", // You can update this if you have team tags
