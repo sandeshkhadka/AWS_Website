@@ -31,7 +31,7 @@ function Rsvp() {
       {/* Grid Layout */}
       <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 p-4 sm:p-6 md:p-8">
         {/* Image Side */}
-        <div className="flex items-center justify-center order-2 lg:order-1">
+        <div className="flex items-center justify-center order-1 hidden md:block">
           <Image
             className="rounded-xl w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto"
             src="/aws-scd.png"

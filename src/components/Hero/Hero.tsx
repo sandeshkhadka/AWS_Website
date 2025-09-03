@@ -44,7 +44,7 @@ export function HeroSection() {
                 <h2 className="mt-6 sm:mt-8 text-balance text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold">
                   Where Clouds Code, Coffee Flows, and IT Geeks Roam Free!
                 </h2>
-                <p className="mx-auto mt-6 sm:mt-8 max-w-2xl text-wrap text-muted-foreground text-base sm:text-lg leading-relaxed block">
+                <p className="mx-auto mt-6 sm:mt-8 max-w-2xl text-wrap text-muted-foreground text-base sm:text-lg leading-relaxed hidden sm:block">
                   The AWS Cloud Club at Nepal introduces cloud computing
                   focusing on AWS, to Nepal&apos;s education sector. It&apos;s a
                   vibrant community of students exploring and innovating in
