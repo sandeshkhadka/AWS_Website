@@ -1,14 +1,12 @@
 "use client";
+import { TeamMember } from "@/interface/team";
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
+import { Github, Linkedin } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { useEffect, useState } from "react";
 
-type Testimonial = {
-  quote: string;
-  name: string;
-  designation: string;
-  src: string;
-};
+type Testimonial = TeamMember;
+
 export const AnimatedTestimonials = ({
   testimonials,
   autoplay = false,
@@ -48,7 +46,7 @@ export const AnimatedTestimonials = ({
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
                 <motion.div
-                  key={testimonial.src}
+                  key={testimonial.image}
                   initial={{
                     opacity: 0,
                     scale: 0.9,
@@ -78,12 +76,12 @@ export const AnimatedTestimonials = ({
                   className="absolute inset-0 origin-bottom"
                 >
                   <img
-                    src={testimonial.src}
+                    src={testimonial.image}
                     alt={testimonial.name}
                     width={500}
                     height={500}
                     draggable={false}
-                    className="h-full w-full rounded-3xl object-cover object-center"
+                    className="h-full w-full grayscale hover:grayscale-0 transition-all ease-linear duration-100 rounded-3xl object-cover object-center"
                   />
                 </motion.div>
               ))}
@@ -116,31 +114,60 @@ export const AnimatedTestimonials = ({
             <p className="text-sm text-gray-500 dark:text-neutral-500">
               {testimonials[active].designation}
             </p>
-            <motion.p className="mt-8 text-lg text-gray-500 dark:text-neutral-300">
-              {testimonials[active].quote.split(" ").map((word, index) => (
-                <motion.span
-                  key={index}
-                  initial={{
-                    filter: "blur(10px)",
-                    opacity: 0,
-                    y: 5,
-                  }}
-                  animate={{
-                    filter: "blur(0px)",
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    duration: 0.2,
-                    ease: "easeInOut",
-                    delay: 0.02 * index,
-                  }}
-                  className="inline-block"
-                >
-                  {word}&nbsp;
-                </motion.span>
-              ))}
+            <motion.p className="mt-8 text-lg">
+              {testimonials[active].designation
+                .split(" ")
+                .map((word, index) => (
+                  <motion.span
+                    key={index}
+                    initial={{
+                      filter: "blur(10px)",
+                      opacity: 0,
+                      y: 5,
+                    }}
+                    animate={{
+                      filter: "blur(0px)",
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{
+                      duration: 0.2,
+                      ease: "easeInOut",
+                      delay: 0.02 * index,
+                    }}
+                    className="inline-block"
+                  >
+                    {word}&nbsp;
+                  </motion.span>
+                ))}
             </motion.p>
+
+            {/* Social Links */}
+            <div className="mt-4 flex gap-4 justify-start">
+              {testimonials[active].social.linkedin && (
+                <a
+                  href={testimonials[active].social.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="w-7 h-7" />
+                </a>
+              )}
+
+              {testimonials[active].social.github && (
+                <a
+                  href={testimonials[active].social.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors"
+                  aria-label="GitHub"
+                >
+                  <Github className="w-7 h-7" />
+                </a>
+              )}
+            </div>
           </motion.div>
           <div className="flex gap-4 pt-12 md:pt-0">
             <button

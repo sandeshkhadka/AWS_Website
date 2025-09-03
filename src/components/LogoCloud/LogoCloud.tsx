@@ -4,7 +4,7 @@ const LogoClouds = () => {
     <div className="py-10 flex items-center justify-center">
       <div className="max-w-7xl px-6">
         <div className="text-center max-w-xl space-y-6">
-          <h2 className="text-4xl lg:text-5xl font-semibold">Our Sponsors</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold">Our Sponsors</h2>
           <p>
             Meet the supports who made AWS Student Community Day 2025 happen.
           </p>

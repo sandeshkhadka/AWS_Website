@@ -1,32 +1,38 @@
-type Contributor = {
-  name: string;
-  role?: string;
-  image: string;
-  github?: string;
-  linkedin?: string;
-};
+import { TeamMember } from "@/interface/team";
 
-const contributors: Contributor[] = [
+const contributors: TeamMember[] = [
   {
-    name: "Sandesh Khadka",
-    role: "Tech Lead",
-    image: "/contributors/sandesh.jpg",
-    github: "https://github.com/sandeshkhadka",
-    linkedin: "https://linkedin.com/in/sandeshkhadka",
-  },
-  {
-    name: "Jeeni Shrestha",
-    role: "Developer",
-    image: '/contributors/jeeni.webp',
-    github: "https://github.com/jeeni",
-    linkedin: "https://linkedin.com/in/jeeni",
-  },
-  {
+    id: 1,
     name: "Sandip Gyawali",
-    github: "https://github.com/SandipGyawali",
-    linkedin: "https://www.linkedin.com",
-    role: "Developer",
-    image: '/contributors/jeeni.webp',
+    designation: "FullStack Developer",
+    image: "/contributors/sandip-gyawali.jpeg",
+    teamTag: "",
+    social: {
+      github: "https://github.com/SandipGyawali",
+      linkedin: "https://www.linkedin.com/in/sandip-gyawali-615681211/",
+    },
+  },
+  {
+    id: 2,
+    name: "Sandesh Khadka",
+    designation: "Tech Lead",
+    image: "/contributors/sandesh.jpg",
+    teamTag: "", // You can update this if you have team tags
+    social: {
+      github: "https://github.com/sandeshkhadka",
+      linkedin: "https://linkedin.com/in/sandeshkhadka",
+    },
+  },
+  {
+    id: 3,
+    name: "Jeeni Shrestha",
+    designation: "Developer",
+    image: "/contributors/jeeni.webp",
+    teamTag: "",
+    social: {
+      github: "https://github.com/jeeni",
+      linkedin: "https://linkedin.com/in/jeeni",
+    },
   },
 ];
 
