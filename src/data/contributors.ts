@@ -1,4 +1,4 @@
-type Contributor = {
+export type ContributorType = {
   name: string;
   role?: string;
   image: string;
@@ -6,7 +6,7 @@ type Contributor = {
   linkedin?: string;
 };
 
-const contributors: Contributor[] = [
+const contributors: ContributorType[] = [
   {
     name: "Sandesh Khadka",
     role: "Tech Lead",

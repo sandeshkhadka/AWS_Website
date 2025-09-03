@@ -7,6 +7,13 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { Calendar, MapPin, Clock } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 const groupEvents = (items: EventItem[]) => {
   const upcoming = items.filter((e) => e.status === "upcoming");
@@ -16,6 +23,7 @@ const groupEvents = (items: EventItem[]) => {
   past.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   return { upcoming, past };
 };
+
 
 const MAX_PAST_EVENTS_DISPLAY = 3;
 
@@ -71,11 +79,24 @@ export function EventsSection() {
         {upcoming.length > 0 && (
           <div className="mt-12">
             <h3 className="text-xl font-semibold mb-4">Upcoming</h3>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {upcoming.map((event) => (
-                <EventCard key={event.id} event={event} ctaLabel="Register" />
-              ))}
-            </div>
+            <Carousel className="w-full max-w">
+              <CarouselContent className="-ml-1">
+                {upcoming.map((event, idx) => (
+
+                  <CarouselItem key={idx} className="pl-1 md:basis-1/2 lg:basis-1/3">
+                    <div className="p-1">
+                      <Card>
+                        <CardContent className="flex aspect-square items-center justify-center p-6">
+                          <EventCard key={event.id} event={event} ctaLabel="Register" />
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         )}
 
@@ -93,11 +114,25 @@ export function EventsSection() {
           {past.length === 0 ? (
             <p className="text-muted-foreground">No past events yet.</p>
           ) : (
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {past.slice(0, MAX_PAST_EVENTS_DISPLAY).map((event) => (
-                <EventCard key={event.id} event={event} ctaLabel="Recap" />
-              ))}
-            </div>
+
+            <Carousel className="w-full max-w">
+              <CarouselContent className="-ml-1">
+                {past.map((event, idx) => (
+
+                  <CarouselItem key={idx} className="pl-1 md:basis-1/2 lg:basis-1/3">
+                    <div className="p-1">
+                      <Card>
+                        <CardContent className="flex aspect-square items-center justify-center p-6">
+                          <EventCard key={event.id} event={event} ctaLabel="Register" />
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           )}
         </div>
       </div>
