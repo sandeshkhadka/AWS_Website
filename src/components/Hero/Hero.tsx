@@ -37,11 +37,11 @@ export function HeroSection() {
             >
               <div className="max-w-3xl text-center sm:mx-auto lg:mr-auto lg:mt-0 lg:w-4/5">
               <SCDButton/>
-                <h1 className="mt-6 sm:mt-8 text-balance text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight xl:[line-height:1.125]">
+                <h1 className="mt-6 sm:mt-8 text-balance text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight xl:[line-height:1.125]">
                   AWS Cloud Club in Nepal
                 </h1>
 
-                <h2 className="mt-6 sm:mt-8 text-balance text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold">
+                <h2 className="mt-6 sm:mt-8 text-balance text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold">
                   Where Clouds Code, Coffee Flows, and IT Geeks Roam Free!
                 </h2>
                 <p className="mx-auto mt-6 sm:mt-8 max-w-2xl text-wrap text-muted-foreground text-base sm:text-lg leading-relaxed block">
