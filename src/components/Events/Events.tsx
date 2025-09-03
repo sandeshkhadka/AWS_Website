@@ -25,7 +25,7 @@ const groupEvents = (items: EventItem[]) => {
 };
 
 
-const MAX_PAST_EVENTS_DISPLAY = 3;
+// const MAX_PAST_EVENTS_DISPLAY = 3;
 
 export function EventsSection() {
   // Derive tag list (stable, sorted) once
@@ -45,13 +45,13 @@ export function EventsSection() {
   const { upcoming, past } = groupEvents(filtered);
 
   return (
-    <section id="events" className="py-16 md:py-28">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="events" className="py-12 sm:py-16 md:py-24 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
             Events
           </h2>
-          <p className="mt-4 text-muted-foreground">
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-muted-foreground">
             Stay updated with our workshops, community days, and meetups. Build,
             learn, and network with AWS enthusiasts across Nepal.
           </p>
@@ -59,7 +59,7 @@ export function EventsSection() {
 
         {/* Tag Filter Bar */}
         {tags.length > 0 && (
-          <div className="mt-10 flex flex-wrap gap-2 justify-center">
+          <div className="mt-8 sm:mt-10 flex flex-wrap gap-2 justify-center">
             <FilterChip
               label="All"
               active={selectedTag === "All"}
@@ -77,19 +77,15 @@ export function EventsSection() {
         )}
 
         {upcoming.length > 0 && (
-          <div className="mt-12">
-            <h3 className="text-xl font-semibold mb-4">Upcoming</h3>
+          <div className="mt-8 sm:mt-12">
+            <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Upcoming</h3>
             <Carousel className="w-full max-w">
               <CarouselContent className="-ml-1">
                 {upcoming.map((event, idx) => (
 
-                  <CarouselItem key={idx} className="pl-1 md:basis-1/2 lg:basis-1/3">
+                  <CarouselItem key={idx} className="pl-1 basis-full sm:basis-1/2 lg:basis-1/3">
                     <div className="p-1">
-                      <Card>
-                        <CardContent className="flex aspect-square items-center justify-center p-6">
-                          <EventCard key={event.id} event={event} ctaLabel="Register" />
-                        </CardContent>
-                      </Card>
+                      <EventCard key={event.id} event={event} ctaLabel="Register" />
                     </div>
                   </CarouselItem>
                 ))}
@@ -101,12 +97,12 @@ export function EventsSection() {
         )}
 
         {upcoming.length === 0 && past.length === 0 && (
-          <p className="mt-12 text-center text-muted-foreground">No events found for this tag.</p>
+          <p className="mt-8 sm:mt-12 text-center text-muted-foreground">No events found for this tag.</p>
         )}
 
-        <div className="mt-16">
-          <div className="flex items-center gap-3 mb-4">
-            <h3 className="text-xl font-semibold">Past Events</h3>
+        <div className="mt-12 sm:mt-16">
+          <div className="flex items-center gap-3 mb-3 sm:mb-4">
+            <h3 className="text-lg sm:text-xl font-semibold">Past Events</h3>
             <span className="text-xs bg-muted px-2 py-1 rounded-full">
               {past.length}
             </span>
@@ -119,13 +115,9 @@ export function EventsSection() {
               <CarouselContent className="-ml-1">
                 {past.map((event, idx) => (
 
-                  <CarouselItem key={idx} className="pl-1 md:basis-1/2 lg:basis-1/3">
+                  <CarouselItem key={idx} className="pl-1 basis-full sm:basis-1/2 lg:basis-1/3">
                     <div className="p-1">
-                      <Card>
-                        <CardContent className="flex aspect-square items-center justify-center p-6">
-                          <EventCard key={event.id} event={event} ctaLabel="Register" />
-                        </CardContent>
-                      </Card>
+                      <EventCard key={event.id} event={event} ctaLabel="View Details" />
                     </div>
                   </CarouselItem>
                 ))}
@@ -189,18 +181,24 @@ function EventCard({ event, ctaLabel = "Details" }: EventCardProps) {
     year: "numeric",
   });
   return (
-    <Card className="flex flex-col overflow-hidden">
+    <Card className="flex flex-col overflow-hidden h-full">
       {coverImage && (
         <div className="relative aspect-[4/2.3] w-full overflow-hidden">
-          <Image src={coverImage} alt={title} fill className="object-cover" />
+          <Image 
+            src={coverImage} 
+            alt={title} 
+            fill 
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover" 
+          />
         </div>
       )}
-      <CardContent className="flex flex-col flex-1 p-5">
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <Calendar className="size-4" /> <span>{readable}</span>
+      <CardContent className="flex flex-col flex-1 p-3 sm:p-4 md:p-5">
+        <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
+          <Calendar className="size-3 sm:size-4" /> <span>{readable}</span>
           {startTime && (
             <>
-              <Clock className="size-4 ml-2" />
+              <Clock className="size-3 sm:size-4 ml-2" />
               <span>
                 {startTime}
                 {endTime ? ` - ${endTime}` : ""}
@@ -208,18 +206,18 @@ function EventCard({ event, ctaLabel = "Details" }: EventCardProps) {
             </>
           )}
         </div>
-        <h4 className="mt-3 font-semibold text-lg leading-snug">{title}</h4>
-        <p className="mt-2 text-sm text-muted-foreground line-clamp-3">
+        <h4 className="mt-2 sm:mt-3 font-semibold text-sm sm:text-base md:text-lg leading-snug line-clamp-2">{title}</h4>
+        <p className="mt-1 sm:mt-2 text-xs sm:text-sm text-muted-foreground line-clamp-3">
           {description}
         </p>
         {venue && (
-          <div className="mt-3 flex items-center gap-2 text-xs text-muted-foreground">
-            <MapPin className="size-4" />{" "}
-            <span className="truncate max-w-[180px]">{venue}</span>
+          <div className="mt-2 sm:mt-3 flex items-center gap-2 text-xs text-muted-foreground">
+            <MapPin className="size-3 sm:size-4" />{" "}
+            <span className="truncate max-w-[140px] sm:max-w-[180px]">{venue}</span>
           </div>
         )}
         {tags && tags.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-2">
+          <div className="mt-2 sm:mt-3 flex flex-wrap gap-1 sm:gap-2">
             {tags.slice(0, MAX_TAGS_DISPLAY).map((tag: string) => (
               <span
                 key={tag}
@@ -235,9 +233,9 @@ function EventCard({ event, ctaLabel = "Details" }: EventCardProps) {
             )}
           </div>
         )}
-        <div className="mt-5 pt-3 flex items-center justify-between border-t">
+        <div className="mt-auto pt-3 border-t">
           {locationUrl ? (
-            <Button asChild size="sm">
+            <Button asChild size="sm" className="w-full sm:w-auto">
               <Link
                 href={locationUrl}
                 target="_blank"
