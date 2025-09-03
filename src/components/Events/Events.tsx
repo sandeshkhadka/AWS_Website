@@ -14,6 +14,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay";
 
 const groupEvents = (items: EventItem[]) => {
   const upcoming = items.filter((e) => e.status === "upcoming");
@@ -43,6 +44,15 @@ export function EventsSection() {
   }, [selectedTag]);
 
   const { upcoming, past } = groupEvents(filtered);
+
+  // Autoplay plugins for carousels
+  const upcomingAutoplay = React.useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: true })
+  );
+  
+  const pastAutoplay = React.useRef(
+    Autoplay({ delay: 5000, stopOnInteraction: true })
+  );
 
   return (
     <section id="events" className="py-12 sm:py-16 md:py-24 lg:py-28">
@@ -79,7 +89,12 @@ export function EventsSection() {
         {upcoming.length > 0 && (
           <div className="mt-8 sm:mt-12">
             <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Upcoming</h3>
-            <Carousel className="w-full max-w">
+            <Carousel 
+              className="w-full max-w"
+              plugins={[upcomingAutoplay.current]}
+              onMouseEnter={upcomingAutoplay.current.stop}
+              onMouseLeave={upcomingAutoplay.current.reset}
+            >
               <CarouselContent className="-ml-1">
                 {upcoming.map((event, idx) => (
 
@@ -111,7 +126,12 @@ export function EventsSection() {
             <p className="text-muted-foreground">No past events yet.</p>
           ) : (
 
-            <Carousel className="w-full max-w">
+            <Carousel 
+              className="w-full max-w"
+              plugins={[pastAutoplay.current]}
+              onMouseEnter={pastAutoplay.current.stop}
+              onMouseLeave={pastAutoplay.current.reset}
+            >
               <CarouselContent className="-ml-1">
                 {past.map((event, idx) => (
 
