@@ -6,7 +6,10 @@ import { Map, CalendarDays, Clock, MapPinned } from "lucide-react";
 
 function Rsvp() {
   return (
-    <div id="scd" className="relative py-16 my-16 lg:my-32 flex items-center justify-center px-6">
+    <div
+      id="scd"
+      className="relative py-16 my-16 lg:my-32 flex items-center justify-center px-6"
+    >
       {/* Lines */}
       <div className="absolute left-0 right-0  top-[20px] z-10 h-px w-full bg-border dark:bg-neutral-700 md:top-[48px]"></div>
       <div className="absolute bottom-0 right-[20px] top-0 z-10 h-full w-px bg-border dark:bg-neutral-700 md:right-[48px]"></div>
@@ -49,7 +52,7 @@ function Rsvp() {
             <h2 className="text-2xl md:text-4xl font-bold mb-4 tracking-wide">
               AWS STUDENT Community Day 2025
             </h2>
-            <p className="text-md md:text-lg mb-6 text-balance">
+            <p className="mb-6 text-balance">
               AWS Student Community Day 2025 is a student-led event featuring
               hands-on workshops, expert talks, and networking opportunities.
               Join fellow cloud enthusiasts to learn, build, and connect with
@@ -57,39 +60,41 @@ function Rsvp() {
             </p>
           </div>
 
-
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-4 justify-self-end">
               <div className="flex gap-2">
-                <CalendarDays color="white" /> <span>Nov 15, 2025</span>
+                <CalendarDays /> <span>Nov 15, 2025</span>
               </div>
               <div className="flex gap-2">
-                <Clock color="white" /> <span>10 A.M - 5 P.M</span>
+                <Clock /> <span>10 A.M - 5 P.M</span>
               </div>
               <div className="flex gap-2">
-                <MapPinned color="white" /> <span>Advanced College of Engineering</span>
+                <MapPinned /> <span>Advanced College of Engineering</span>
               </div>
             </div>
 
             <div className="flex gap-4">
               <Button size="lg" className="text-white" asChild>
-                <Link target="_blank" href={
-                  "https://www.meetup.com/aws-cloud-club-at-tribhuvan-university/events/310674609/?utm_medium=referral&utm_campaign=share-btn_savedevents_share_modal&utm_source=link&utm_version=v2"
-                }>
+                <Link
+                  target="_blank"
+                  href={
+                    "https://www.meetup.com/aws-cloud-club-at-tribhuvan-university/events/310674609/?utm_medium=referral&utm_campaign=share-btn_savedevents_share_modal&utm_source=link&utm_version=v2"
+                  }
+                >
                   <span className="text-nowrap">RSVP Now!</span>
                 </Link>
               </Button>
 
               <Button size="lg" className="text-white" asChild>
-                <Link target="_blank" href={
-                  "https://maps.app.goo.gl/QVQ5cZpybMoa6u4U6"
-                }>
+                <Link
+                  target="_blank"
+                  href={"https://maps.app.goo.gl/QVQ5cZpybMoa6u4U6"}
+                >
                   <Map />
                   <span className="text-nowrap">Open in Google Maps</span>
                 </Link>
               </Button>
             </div>
-
           </div>
         </div>
       </div>

@@ -23,7 +23,7 @@ export function EventsSection() {
   // Derive tag list (stable, sorted) once
   const tags: TagType[] = useMemo(() => {
     const set = new Set<TagType>();
-    events.forEach(ev => ev.tags?.forEach(t => set.add(t)));
+    events.forEach((ev) => ev.tags?.forEach((t) => set.add(t)));
     return Array.from(set).sort((a, b) => a.localeCompare(b));
   }, []);
 
@@ -31,7 +31,7 @@ export function EventsSection() {
 
   const filtered = useMemo(() => {
     if (selectedTag === "All") return events;
-    return events.filter(ev => ev.tags?.includes(selectedTag));
+    return events.filter((ev) => ev.tags?.includes(selectedTag));
   }, [selectedTag]);
 
   const { upcoming, past } = groupEvents(filtered);
@@ -57,7 +57,7 @@ export function EventsSection() {
               active={selectedTag === "All"}
               onClick={() => setSelectedTag("All")}
             />
-            {tags.map(tag => (
+            {tags.map((tag) => (
               <FilterChip
                 key={tag}
                 label={tag}
@@ -80,7 +80,9 @@ export function EventsSection() {
         )}
 
         {upcoming.length === 0 && past.length === 0 && (
-          <p className="mt-12 text-center text-muted-foreground">No events found for this tag.</p>
+          <p className="mt-12 text-center text-muted-foreground">
+            No events found for this tag.
+          </p>
         )}
 
         <div className="mt-16">
@@ -128,7 +130,7 @@ function FilterChip({ label, active, onClick }: FilterChipProps) {
         "text-xs md:text-sm px-3 py-1.5 rounded-full border transition, cursor-pointer",
         active
           ? "bg-primary text-primary-foreground border-primary"
-          : "bg-background hover:bg-muted border-border text-muted-foreground"
+          : "bg-background hover:bg-muted border-border text-muted-foreground",
       ].join(" ")}
     >
       {label}

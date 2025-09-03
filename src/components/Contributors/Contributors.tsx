@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import contributors from "@/data/contributors";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -20,7 +19,6 @@ export const ContributorsSection = () => {
           Our Contributors
         </h2>
 
-
         <div className="flex items-center gap-2">
           <Swiper
             modules={[Pagination, Autoplay]}
@@ -36,7 +34,6 @@ export const ContributorsSection = () => {
             {contributors.map((contributor, idx) => (
               <SwiperSlide key={idx} className="flex justify-center">
                 <div className="bg-card text-card-foreground rounded-2xl shadow-lg overflow-hidden transition hover:shadow-xl hover:-translate-y-1 w-[280px]">
-
                   {/* Image */}
                   <div className="relative w-full aspect-square">
                     <Image
@@ -49,7 +46,9 @@ export const ContributorsSection = () => {
 
                   {/* Info */}
                   <div className="p-5 flex flex-col items-center text-center">
-                    <h3 className="text-lg font-semibold">{contributor.name}</h3>
+                    <h3 className="text-lg font-semibold">
+                      {contributor.name}
+                    </h3>
                     {contributor.role && (
                       <p className="text-muted-foreground text-sm mt-1">
                         {contributor.role}
@@ -63,7 +62,7 @@ export const ContributorsSection = () => {
                           rel="noopener noreferrer"
                           className="text-muted-foreground hover:text-primary transition"
                         >
-                        <Github/>
+                          <Github />
                         </Link>
                       )}
                       {contributor.linkedin && (
@@ -73,7 +72,7 @@ export const ContributorsSection = () => {
                           rel="noopener noreferrer"
                           className="text-muted-foreground hover:text-primary transition"
                         >
-                        <Linkedin/>
+                          <Linkedin />
                         </Link>
                       )}
                     </div>
@@ -87,4 +86,3 @@ export const ContributorsSection = () => {
     </section>
   );
 };
-
