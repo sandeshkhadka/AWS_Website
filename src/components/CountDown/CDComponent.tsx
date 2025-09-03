@@ -61,13 +61,13 @@ export default function CountdownTimer({
   return (
     <div className={`flex flex-col items-center ${large ? "w-full" : ""}`}>
     
-      <div className="flex gap-2 md:gap-4">
+      <div className="flex gap-1 sm:gap-2 md:gap-4">
         {timeUnits.map((unit, index) => (
           <div key={index} className="flex flex-col items-center">
             <Card
               className={`bg-[#a166e8] backdrop-blur-sm 
                 flex items-center justify-center 
-                ${large ? "w-15 h-15   md:w-20 md:h-20" : "w-10 h-10"}`}
+                ${large ? "w-12 h-12 sm:w-15 sm:h-15 md:w-20 md:h-20" : "w-8 h-8 sm:w-10 sm:h-10"}`}
             >
               <motion.span
                 key={unit.value}
@@ -75,14 +75,14 @@ export default function CountdownTimer({
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 className={`font-bold text-white ${
-                  large ? "text-3xl md:text-4xl" : "text-xl"
+                  large ? "text-lg sm:text-2xl md:text-3xl lg:text-4xl" : "text-sm sm:text-xl"
                 }`}
               >
                 {unit.value.toString().padStart(2, "0")}
               </motion.span>
             </Card>
             <span
-              className={` mt-1 ${large ? "text-sm" : "text-xs"}`}
+              className={`mt-1 text-center ${large ? "text-xs sm:text-sm" : "text-xs"}`}
             >
               {unit.label}
             </span>
