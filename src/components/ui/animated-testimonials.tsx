@@ -28,6 +28,10 @@ export const AnimatedTestimonials = ({
     }
   }, [autoplay]);
   
+  useEffect(()=>{
+    setActive(0);
+  },[testimonials]);
+  
   if (!mounted) return null;
   const handleNext = () => {
     setActive((prev) => (prev + 1) % testimonials.length);
@@ -38,7 +42,7 @@ export const AnimatedTestimonials = ({
   };
 
   const isActive = (index: number) => {
-    return index+1 === active;
+    return index=== active;
   };
 
 
