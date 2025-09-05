@@ -27,8 +27,8 @@ export const AnimatedTestimonials = ({
       return () => clearInterval(interval);
     }
   }, [autoplay]);
+  
   if (!mounted) return null;
-
   const handleNext = () => {
     setActive((prev) => (prev + 1) % testimonials.length);
   };
@@ -38,7 +38,7 @@ export const AnimatedTestimonials = ({
   };
 
   const isActive = (index: number) => {
-    return index === active;
+    return index+1 === active;
   };
 
 
