@@ -15,6 +15,19 @@ export const AnimatedTestimonials = ({
   autoplay?: boolean;
 }) => {
   const [active, setActive] = useState(0);
+  const [mounted, setMounted] = useState(false);
+//Trigger the randomness function after the mouting  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (autoplay) {
+      const interval = setInterval(handleNext, 5000);
+      return () => clearInterval(interval);
+    }
+  }, [autoplay]);
+  if (!mounted) return null;
 
   const handleNext = () => {
     setActive((prev) => (prev + 1) % testimonials.length);
@@ -28,12 +41,6 @@ export const AnimatedTestimonials = ({
     return index === active;
   };
 
-  useEffect(() => {
-    if (autoplay) {
-      const interval = setInterval(handleNext, 5000);
-      return () => clearInterval(interval);
-    }
-  }, [autoplay]);
 
   const randomRotateY = () => {
     return Math.floor(Math.random() * 21) - 10;
@@ -109,13 +116,13 @@ export const AnimatedTestimonials = ({
             }}
           >
             <h3 className="text-2xl font-bold text-black dark:text-white">
-              {testimonials[active].name}
+              {testimonials[active]?.name}
             </h3>
             <p className="text-sm text-gray-500 dark:text-neutral-500">
-              {testimonials[active].designation}
+              {testimonials[active]?.designation}
             </p>
             <motion.p className="mt-8 text-lg">
-              {testimonials[active].designation
+              {testimonials[active]?.designation
                 .split(" ")
                 .map((word, index) => (
                   <motion.span
@@ -144,9 +151,9 @@ export const AnimatedTestimonials = ({
 
             {/* Social Links */}
             <div className="mt-4 flex gap-4 justify-start">
-              {testimonials[active].social.linkedin && (
+              {testimonials[active]?.social.linkedin && (
                 <a
-                  href={testimonials[active].social.linkedin}
+                  href={testimonials[active]?.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors"
@@ -156,9 +163,9 @@ export const AnimatedTestimonials = ({
                 </a>
               )}
 
-              {testimonials[active].social.github && (
+              {testimonials[active]?.social.github && (
                 <a
-                  href={testimonials[active].social.github}
+                  href={testimonials[active]?.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors"
